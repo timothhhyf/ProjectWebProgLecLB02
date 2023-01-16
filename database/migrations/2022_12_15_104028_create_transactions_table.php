@@ -19,9 +19,10 @@ class CreateTransactionsTable extends Migration
             $tablle->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('category');
+            $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade')->onUpdate('cascade');
+            $table->date('date');
             $table->string('description');
-            $table->string('price');
+            $table->string('nominal');
         });
     }
 
