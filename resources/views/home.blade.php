@@ -42,7 +42,7 @@
             <a href="https://play.google.com/" target="_blank">
                 <img src="{{url('/asset/Google Play Store.svg')}}" alt="GooglePlayStore" style="width: 150px; height:50px;">
             </a>
-            <a href="/login" target="_blank">
+            <a href="/login">
                 <img src="{{url('/asset/Web Version.svg')}}" alt="WebVersion" style="width: 150px; height:50px;">
             </a>
         </div>
