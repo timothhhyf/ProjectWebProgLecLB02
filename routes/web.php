@@ -18,6 +18,9 @@ Route::get('/', function () {
     return view('home');
 });
 
+//Route nembak buat frontend
+Route::view('/login', 'login');
+
 // Category
 Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/addcategory', [CategoryController::class, 'create']);
