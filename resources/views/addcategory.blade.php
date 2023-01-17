@@ -1,4 +1,6 @@
-@extends('navbar')
+@extends('template')
+
+@section('title', 'Add Category')
 
 @section('content')
 <div style="width: 100vw; height: 94vh" class="d-flex justify-content-center align-items-center">
