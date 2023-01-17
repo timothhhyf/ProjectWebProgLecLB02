@@ -21,6 +21,7 @@ class CreateTransactionsTable extends Migration
             $table->string('price');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->date('date');
             $table->timestamps();
         });
     }
