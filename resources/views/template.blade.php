@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/zephyr/bootstrap.min.css">
     <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
     <title>@yield('title')</title>
 </head>
-<body style="
-            background-color: rgb(255, 255, 255);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;">
+<body style=" background-color: rgb(255, 255, 255); margin: 0; display: flex; flex-direction: column; min-height: 100vh;">
 
     {{-- Bagian Navbar --}}
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:aliceblue; padding: 10px 30px 10px 30px;">

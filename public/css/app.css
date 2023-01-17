@@ -63,3 +63,106 @@
     gap: 20px;
 }
 
+.header-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text h3{
+    margin: 0;
+    font-weight: bolder;
+    font-size: x-large;
+    color: #0f6aac;
+}
+
+.login-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.form-group-row{
+    width: 475px;
+}
+
+.input-group.mb-3{
+    height: 45px;
+}
+
+.input-group.mb-3 span{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: small;
+    width: 90px;
+}
+
+.input-group.mb-3 input{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: small;
+}
+
+input:focus::-moz-placeholder{
+    color: transparent;
+}
+
+input:focus::placeholder{
+    color: transparent;
+}
+
+::-moz-placeholder{
+    padding-left: 100px;
+    color: #303030;;
+ }
+
+::placeholder{
+    padding-left: 100px;
+    color: #303030;;
+ }
+
+.form-check:hover input{
+    background-color: #0f6aac;
+}
+.form-check input:checked{
+    background-color: #0b4a77;
+}
+
+.form-check{
+    margin-top: 20px;
+    font-size: small;
+}
+
+.btn-info{
+    margin-top: 15px;
+    height: 33px;
+    width: 475px;
+    background-color: #0f6aac;
+    font-size: small;
+}
+
+.btn-info:hover{
+    background-color: #0b4a77;
+}
+
+.under-btn-text{
+    margin-top: 12.5px;
+    display: flex;
+    flex-direction: row;
+    font-size: smaller;
+    justify-content: center;
+    align-items: center;
+}
+
+.under-btn-text a{
+    text-decoration: none;
+    color: #0f6aac;
+    font-weight: 550;
+}
+
+.under-btn-text a:hover{
+    color: #0b4a77;
+}
+
