@@ -1,3 +1,11 @@
+.login-btn{
+    background-color: #0f6aac;
+}
+
+.login-btn:hover{
+    background-color: #0b4a77;
+}
+
 .social-container a{
     text-decoration: none;
     color:#0f6aac;
