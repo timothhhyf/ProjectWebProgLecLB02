@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarColor03" style="justify-content:end !important;">
                 <ul class="navbar-nav me-auto" style="margin-right:0 !important;">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Transactions</a>

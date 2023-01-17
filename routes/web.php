@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +21,18 @@ Route::get('/', function () {
 });
 
 //Route nembak buat frontend
-Route::view('/login', 'login');
+// Route::view('/login', 'login');
 
-// Category
+Route::get('/login', function(){
+    return view('login');
+});
 Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/addcategory', [CategoryController::class, 'create']);
-Route::post('/store', [CategoryController::class, 'store']);
 Route::get('/editcategory', [CategoryController::class, 'edit']);
+
+Route::post('/login/authLogin', [UserController::class, 'login']);
+
+// Category
+Route::post('/store', [CategoryController::class, 'store']);
 Route::post('/update/{category}', [CategoryController::class, 'update']);
 Route::delete('/destroy/{category}', [CategoryController::class, 'destroy']);
