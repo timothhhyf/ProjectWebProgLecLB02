@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/addcategory', [CategoryController::class, 'addcategory']);
+Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/addcategory', [CategoryController::class, 'create']);
