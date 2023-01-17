@@ -22,6 +22,10 @@ Route::get('/', function () {
 Route::view('/login', 'login');
 Route::view('/register', 'register');
 Route::view('/transactions', 'viewtransaction');
+Route::view('/AddCategory', 'addcategory');
+Route::view('/Category', 'transpercat');
+Route::view('/addtransaction', 'addtransaction');
+Route::view('/updatetransaction', 'updatetrans');
 
 // Category
 Route::get('/category', [CategoryController::class, 'index']);

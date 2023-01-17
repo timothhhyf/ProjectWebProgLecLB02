@@ -1,11 +1,11 @@
 @extends('template')
 
-@section('title', 'Add Transaction')
+@section('title', 'Update Transaction')
 
 @section('content')
 
     <div class="create-update0">
-        <h1>New Transaction</h1>
+        <h1>Update Transaction</h1>
         <form action="">
             {{ csrf_field() }}
             <div class="form-group create-update1">
@@ -31,7 +31,7 @@
                     <label for="floatingTextarea">Description</label>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Add Transaction</button>        </form>
+            <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Update Transaction</button>        </form>
     </div>
 
 

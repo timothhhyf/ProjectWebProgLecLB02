@@ -7,7 +7,16 @@
     <div class="transaction-content">
         <div class="categories-add-btn">
             <h5>Categories</h5>
-            <a type="button" class="btn btn-outline-primary">&#43;&nbsp;Add Category</a>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-outline-primary" disabled>&#43;&nbsp;Add</button>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="/addcategory">Add Category</a>
+                    <a class="dropdown-item" href="#">Add Transaction</a>
+                  </div>
+                </div>
+              </div>
         </div>
         <div class="category-selection-overall">
             <div class="category-selection">
@@ -69,7 +78,6 @@
                     <input class="form-control me-sm-2 transactions-search-bar" type="search" placeholder="Search transaction">
                     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
-                <a href="" type="button" class="btn btn-outline-primary">&#43;&nbsp;Add Transaction</a>
             </div>
         </div>
     </div>
@@ -92,7 +100,10 @@
                     <td>Column content</td>
                     <td style="position: relative;">Column content
                     {{-- ini jgn didelete, masukin ke loop --}}
-                        <a href="" style="position: absolute; right:20px; color:red;">
+                        <a class="edit-btn" href="">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <a class="remove-btn" href="">
                             <i class="fa-solid fa-trash"></i>
                         </a>
                     </td>

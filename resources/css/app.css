@@ -225,7 +225,7 @@ input:focus::placeholder{
 }
 
 .category-selection-overall{
-    margin: 0 60px 0 60px;
+    margin: 20px 60px 0 60px;
 }
 
 .categories-add-btn{
@@ -353,4 +353,52 @@ input:focus::placeholder{
 
 .transactions-search-bar::placeholder{
     padding-left: 0;
+}
+
+.edit-btn{
+    position: absolute;
+    right:40px;
+    color:rgb(0, 0, 0);
+}
+
+.remove-btn{
+    position: absolute;
+    right:20px;
+    color:rgb(0, 0, 0);
+}
+
+.remove-btn:hover{
+    color:rgb(255, 0, 0);
+}
+
+.category-select{ grid-area: category; }
+.input-expenses{ grid-area: expenses; }
+.input-date-and-time{ grid-area: date-and-time; }
+.input-description{ grid-area: description; }
+
+.form-group.create-update1{
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 'category expenses date-and-time' 'description description description';
+}
+
+.create-update0{
+    margin-top: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-update0 h1{
+    font-weight: bolder;
+    color: #0b4a77;
+    margin-bottom: 20px;
+}
+
+.selected-category-name{
+    margin: 25px 40px 10px 40px;
+    font-weight: bolder;
+    color: #0b4a77;
+    margin-bottom: 20px;
 }
