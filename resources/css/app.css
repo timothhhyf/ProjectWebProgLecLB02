@@ -71,6 +71,9 @@
     gap: 20px;
 }
 
+/* Login and Register Page CSS */
+
+/* Login Page CSS */
 .header-text{
     display: flex;
     flex-direction: row;
@@ -168,4 +171,49 @@ input:focus::placeholder{
 
 .under-btn-text a:hover{
     color: #0b4a77;
+}
+
+/* Register Page CSS */
+.register-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.form-group-row.register{
+    width: 550px;
+}
+
+.input-group.mb-3.register{
+    height: 45px;
+}
+
+.input-group.mb-3.register span{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: small;
+    width: 143px;
+}
+
+.input-group.mb-3.register input{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: small;
+}
+
+.input-group.mb-3.register input::placeholder{
+    padding-left: 72px;
+}
+
+.btn-info.register{
+    margin-top: 15px;
+    height: 33px;
+    width: 550px;
+    background-color: #0f6aac;
+    font-size: small;
+}
+
+.btn-info.register:hover{
+    background-color: #0b4a77;
 }

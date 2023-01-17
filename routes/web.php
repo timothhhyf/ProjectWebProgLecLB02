@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 //Route nembak buat frontend
 Route::view('/login', 'login');
+Route::view('/register', 'register');
 
 // Category
 Route::get('/category', [CategoryController::class, 'index']);

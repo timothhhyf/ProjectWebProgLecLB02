@@ -6,7 +6,7 @@
 
     <div style="display:flex; flex-direction:column; align-items:center; margin-top:auto;">
         <div class="header-text">
-            <h3>Hello, Welcome back to &nbsp;&nbsp;</h3>
+            <h3>Hello, Welcome back to&nbsp;&nbsp;</h3>
             <svg width="38" height="38" viewBox="0 0 106 106" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <rect y="0.789062" width="106" height="104.935" fill="url(#pattern0)"/>
                 <defs>
