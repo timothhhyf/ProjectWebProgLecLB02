@@ -58,4 +58,4 @@
         {{$errors->first()}}
     @endif
 
-    @endsection
+@endsection
