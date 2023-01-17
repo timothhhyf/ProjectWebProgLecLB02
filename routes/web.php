@@ -32,6 +32,7 @@ Route::get('/addcategory', [CategoryController::class, 'create']);
 Route::get('/editcategory', [CategoryController::class, 'edit']);
 
 Route::post('/login/authLogin', [UserController::class, 'login']);
+Route::post('/register/addUser', [UserController::class, 'createUser']);
 
 // Category
 Route::post('/store', [CategoryController::class, 'store']);

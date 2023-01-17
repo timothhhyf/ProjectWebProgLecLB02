@@ -43,12 +43,14 @@
                     </li>
 
                     {{-- Login & Register Button --}}
-                    <li class="nav-item" style="margin-right:10px;">
-                        <a href="/login" type="button" class="btn btn-primary login-btn">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/register" type="button" class="btn btn-secondary register-btn">Register</a>
-                    </li>
+                    @if (!Auth::check())
+                        <li class="nav-item" style="margin-right:10px;">
+                            <a href="/login" type="button" class="btn btn-primary login-btn">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/register" type="button" class="btn btn-secondary register-btn">Register</a>
+                        </li>
+                    @endif
                 </ul>
                 <div class="login-register-btn">
                 </div>

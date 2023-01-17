@@ -74,7 +74,7 @@ class UserController extends Controller
         $newUser->email = $email;
 
         $newUser->save();
-        return redirect('/');
+        return redirect('/login');
     }
 
     public function editUser(Request $request){
