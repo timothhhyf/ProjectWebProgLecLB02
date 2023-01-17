@@ -353,6 +353,12 @@ input:focus::placeholder{
     background-color: #002b49;
 }
 
+.transactions-search-and-add{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 .transactions-search-bar::-moz-placeholder{
     padding-left: 0;
 }

@@ -63,12 +63,13 @@
                 <a href="">Newest</a>
                 <a href="">Latest</a>
             </div>
-            <div class="transactions-search">
+            <div class="transactions-search-and-add">
                 <form class="d-flex">
                     {{ csrf_field() }}
                     <input class="form-control me-sm-2 transactions-search-bar" type="search" placeholder="Search transaction">
                     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
+                <a href="" type="button" class="btn btn-outline-primary">&#43;&nbsp;Add Transaction</a>
             </div>
         </div>
     </div>
