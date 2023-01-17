@@ -41,19 +41,18 @@
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Transactions</a>
+                    </li>
+                    <li class="nav-item" style="margin-right:5px;">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+
+                    {{-- Login & Register Button --}}
+                    <li class="nav-item" style="margin-right:10px;">
+                        <a href="/login" type="button" class="btn btn-primary">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-primary">Primary</button>
-                    </li>
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-secondary">Secondary</button>
+                        <a href="/register" type="button" class="btn btn-secondary">Register</a>
                     </li>
                 </ul>
                 <div class="login-register-btn">
@@ -66,7 +65,7 @@
     @yield('content')
 
     {{-- Bagian Footer --}}
-    <footer class="footer" style="margin-top: auto; background-color:aliceblue; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap:10px;">
+    <footer class="footer" style="margin-top: auto; background-color:aliceblue; height: 175px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap:5px;">
         <div href="#" class="navbar-brand">
             <svg width="75" height="75" viewBox="0 0 106 106" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <rect y="0.789062" width="106" height="104.935" fill="url(#pattern0)"/>
@@ -96,11 +95,14 @@
             </a>
         </div>
         <div class="footer-text" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
-            <p><a href="">Privacy Policy</a></p>
-            <p>&nbsp;&nbsp;&#9474;&nbsp;&nbsp;</p>
-            <p><a href="">Terms of Service</a></p>
-            <p>&nbsp;&nbsp;&#9474;&nbsp;&nbsp;</p>
-            <p><a href="">Contact Us</a></p>
+            <p style="margin-bottom: 0;"><a href="">Privacy Policy</a></p>
+            <p style="margin-bottom: 0;">&nbsp;&nbsp;&#9474;&nbsp;&nbsp;</p>
+            <p style="margin-bottom: 0;"><a href="">Terms of Service</a></p>
+            <p style="margin-bottom: 0;">&nbsp;&nbsp;&#9474;&nbsp;&nbsp;</p>
+            <p style="margin-bottom: 0;"><a href="">Contact Us</a></p>
+        </div>
+        <div class="copyright-text">
+            <p style="margin-bottom: 0; font-size: small; color: #0f6aac;">Copyright &#169; 2023 All Rights Reserved</p>
         </div>
     </footer>
 
