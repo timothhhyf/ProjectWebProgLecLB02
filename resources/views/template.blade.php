@@ -44,10 +44,10 @@
 
                     {{-- Login & Register Button --}}
                     <li class="nav-item" style="margin-right:10px;">
-                        <a href="/login" type="button" class="btn btn-primary">Login</a>
+                        <a href="/login" type="button" class="btn btn-primary login-btn">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/register" type="button" class="btn btn-secondary">Register</a>
+                        <a href="/register" type="button" class="btn btn-secondary register-btn">Register</a>
                     </li>
                 </ul>
                 <div class="login-register-btn">
