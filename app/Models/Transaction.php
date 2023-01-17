@@ -11,6 +11,12 @@ class Transaction extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'category_id',
+        'description',
+        'price'
+    ];
     /**
      * Get the user that owns the Transaction
      *

@@ -13,9 +13,27 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $transactions = Transaction::with('user')->get();
+        $users = User::with('transactions')->get();
+        $categories = Category::all();
 
+        return view('transaction', [
+            "transactions" => $transactions,
+            "users" => $users,
+            "categories" => $categories
+        ]);
+    }
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $category = Category::find($id);
+        
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -37,16 +55,7 @@ class TransactionController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
