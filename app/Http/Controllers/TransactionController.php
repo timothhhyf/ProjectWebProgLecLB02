@@ -48,7 +48,8 @@ class TransactionController extends Controller
 
     public function editTransView(Request $request){
         $trans = Transaction::find($request->id);
-        return view();
+        $categories = Category::all();
+        return view('edittransaction', ['transaction' => $trans, 'categories' => $categories]);
     }
 
     public function editTransaction(Request $request){
@@ -56,7 +57,7 @@ class TransactionController extends Controller
 
         $category = $request->category;
         $date = $request->date;
-        $description - $request->description;
+        $description = $request->description;
         $nominal = $request->nominal;
 
         $validation = [
@@ -73,7 +74,7 @@ class TransactionController extends Controller
         $trans->category_id = $category;
         $trans->date = $date;
         $trans->description = $description;
-        $trans->nominal = $nominal;
+        $trans->price = $nominal;
 
         $trans->save();
         return redirect('/');

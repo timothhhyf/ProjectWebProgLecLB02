@@ -42,6 +42,7 @@ Route::get('/transaction/{category}', [TransactionController::class, 'show']);
 Route::post('/login/authLogin', [UserController::class, 'login']);
 Route::post('/register/addUser', [UserController::class, 'createUser']);
 Route::post('/transaction/add/addTrans', [TransactionController::class, 'createTransaction']);
+Route::post('/transcation/{id}/edit/editTrans', [TransactionController::class, 'editTransaction']);
 Route::post('/store', [CategoryController::class, 'store']);
 Route::post('/update/{category}', [CategoryController::class, 'update']);
 Route::delete('/destroy/{category}', [CategoryController::class, 'destroy']);
