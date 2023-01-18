@@ -13,7 +13,7 @@
     {{-- Bagian Navbar --}}
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:aliceblue; padding: 10px 30px 10px 30px;">
         <div class="container-fluid">
-            <a href="#" class="navbar-brand">
+            <a href="/" class="navbar-brand">
                 <svg width="75" height="75" viewBox="0 0 106 106" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <rect y="0.789062" width="106" height="104.935" fill="url(#pattern0)"/>
                     <defs>
@@ -36,7 +36,7 @@
                         <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Transactions</a>
+                        <a class="nav-link" href="/transactions">Transactions</a>
                     </li>
                     <li class="nav-item" style="margin-right:5px;">
                         <a class="nav-link" href="#">Profile</a>
@@ -105,7 +105,6 @@
             <p style="margin-bottom: 0; font-size: small; color: #0f6aac;">Copyright &#169; 2023 All Rights Reserved</p>
         </div>
     </footer>
-
     <script src='https://kit.fontawesome.com/c02b4811d0.js' crossorigin='anonymous'></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>

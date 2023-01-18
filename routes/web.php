@@ -23,6 +23,11 @@ Route::get('/', function () {
 //Route nembak buat frontend
 Route::view('/login', 'login');
 Route::view('/register', 'register');
+Route::view('/transactions', 'viewtransaction');
+Route::view('/AddCategory', 'addcategory');
+Route::view('/Category', 'transpercat');
+Route::view('/addtransaction', 'addtransaction');
+Route::view('/updatetransaction', 'updatetrans');
 
 Route::get('/login', function(){
     return view('login');

@@ -209,3 +209,196 @@ input:focus::placeholder{
 .btn-info.register:hover{
     background-color: #0b4a77;
 }
+
+.transaction-content{
+    margin-top: 30px;
+}
+
+.transaction-content h5{
+    font-weight: bolder;
+    color: #0b4a77;
+    margin-bottom: 0;
+}
+
+.trans-table{
+    margin: 20px 40px 0 40px;
+}
+
+.category-selection-overall{
+    margin: 20px 60px 0 60px;
+}
+
+.categories-add-btn{
+    margin: 0px 40px 10px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scroll-categories {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 27px;
+}
+
+.scroll-categories::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color:transparent;
+}
+
+.scroll-categories::-webkit-scrollbar-thumb {
+    background-color:#1683d094;
+    border-radius: 6px;
+}
+
+.scroll-categories a{
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: #3b8fcb;
+    text-decoration: none;
+}
+
+.scroll-categories p{
+    padding: 6px 60px 6px 60px;
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    font-size: small;
+}
+
+.scroll-categories a:hover{
+    background-color: #3d81b1;
+}
+
+.cover {
+    padding: 0px 30px;
+    position: relative;
+    margin: 0;
+}
+
+.cover button{
+    padding: 6px 10px 6px 10px;
+    color: #1683d0;
+    background-color:transparent;
+    border: 1px solid #1683d0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cover button:hover{
+    padding: 6px 10px 6px 10px;
+    color: #1683d0;
+    background-color:#1683d012;
+    border: 1px solid #1683d0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.left {
+    position: absolute;
+    left: -1.3%;
+    top: 35%;
+    transform: translateY(-50%);
+}
+
+.right {
+    position: absolute;
+    right: -1.3%;
+    top: 35%;
+    transform: translateY(-50%);
+}
+
+.transactions-sorter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 40px 0px 40px;
+}
+
+.transactions-sort-by{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    font-size: small;
+}
+
+.transactions-sort-by a{
+    padding: 6px 30px 6px 30px;
+    border-radius: 20px;
+    background-color: #0d4166;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.transactions-sort-by a:hover{
+    background-color: #002b49;
+}
+
+.transactions-search-and-add{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.transactions-search-bar::placeholder{
+    padding-left: 0;
+}
+
+.edit-btn{
+    position: absolute;
+    right:40px;
+    color:rgb(0, 0, 0);
+}
+
+.remove-btn{
+    position: absolute;
+    right:20px;
+    color:rgb(0, 0, 0);
+}
+
+.remove-btn:hover{
+    color:rgb(255, 0, 0);
+}
+
+.category-select{ grid-area: category; }
+.input-expenses{ grid-area: expenses; }
+.input-date-and-time{ grid-area: date-and-time; }
+.input-description{ grid-area: description; }
+
+.form-group.create-update1{
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 'category expenses date-and-time' 'description description description';
+}
+
+.create-update0{
+    margin-top: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-update0 h1{
+    font-weight: bolder;
+    color: #0b4a77;
+    margin-bottom: 20px;
+}
+
+.selected-category-name{
+    margin: 25px 40px 10px 40px;
+    font-weight: bolder;
+    color: #0b4a77;
+    margin-bottom: 20px;
+}
