@@ -96,10 +96,27 @@ class TransactionController extends Controller
         ]);
     }
 
-    public function show(Request $request)
-    {
+    public function show(Request $request){
         $category = Category::find($request->category);
         $transactions = Transaction::where('category_id', 'LIKE', "$request->category")->orderBy('date','desc')->get();
         return view('transpercat', ['transactions' => $transactions, 'category' => $category]);
+    }
+
+    public function sortLatest(){
+        $transactions = Transaction::orderBy('date', 'desc')->get();
+        $categories = Category::all();
+        return view('viewtransaction', ['transactions' => $transactions, 'categories' => $categories]);
+    }
+
+    public function sortOldest(){
+        $transactions = Transaction::orderBy('date', 'asc')->get();
+        $categories = Category::all();
+        return view('viewtransaction', ['transactions' => $transactions, 'categories' => $categories]);
+    }
+
+    public function searchTransaction(Request $request){
+        $transactions = Transaction::where('description', 'LIKE', "$request->description%")->get();
+        $categories = Category::all();
+        return view('viewtransaction', ['transactions' => $transactions, 'categories' => $categories]);
     }
 }

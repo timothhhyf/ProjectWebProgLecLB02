@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <a href="/" class="navbar-brand">
                 <svg width="75" height="75" viewBox="0 0 106 106" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <rect y="0.789062" width="106" height="104.935" fill="{{url('/')}}"/>
+                    <rect y="0.789062" width="106" height="104.935" fill="url(#pattern0)"/>
                     <defs>
                     <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                     <use xlink:href="#image0_6_15" transform="translate(0 -0.0050733) scale(0.000925926 0.000935321)"/>

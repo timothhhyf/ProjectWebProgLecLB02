@@ -40,13 +40,13 @@
         <div class="transactions-sorter">
             <div class="transactions-sort-by">
                 <h5 style="font-size:medium;">Sort By:</h5>
-                <a href="">Newest</a>
-                <a href="">Latest</a>
+                <a href="/transactions/latest">Latest</a>
+                <a href="/transactions/oldest">Oldest</a>
             </div>
             <div class="transactions-search-and-add">
-                <form class="d-flex">
+                <form class="d-flex" action="/transaction/search" method="POST">
                     {{ csrf_field() }}
-                    <input class="form-control me-sm-2 transactions-search-bar" type="search" placeholder="Search transaction">
+                    <input name="description" class="form-control me-sm-2 transactions-search-bar" type="search" placeholder="Search transaction">
                     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
