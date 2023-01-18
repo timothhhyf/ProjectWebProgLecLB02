@@ -13,7 +13,7 @@
                   <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                   <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                     <a class="dropdown-item" href="/category">Add Category</a>
-                    <a class="dropdown-item" href="#">Add Transaction</a>
+                    <a class="dropdown-item" href="/transaction/add">Add Transaction</a>
                   </div>
                 </div>
               </div>

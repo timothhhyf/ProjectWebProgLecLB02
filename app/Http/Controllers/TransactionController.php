@@ -12,12 +12,17 @@ use Illuminate\Support\Facades\Validator;
 class TransactionController extends Controller
 {
     //
+    public function createTransView(){
+        $categories = Category::all();
+        return view('addtransaction', ['categories' => $categories]);
+    }
+
     public function createTransaction(Request $request){
         $newTrans = new Transaction();
 
         $category = $request->category;
         $date = $request->date;
-        $description - $request->description;
+        $description = $request->description;
         $nominal = $request->nominal;
 
         $validation = [
@@ -32,12 +37,13 @@ class TransactionController extends Controller
         }
 
         $newTrans->category_id = $category;
+        $newTrans->user_id = Auth::user()->id;
         $newTrans->date = $date;
         $newTrans->description = $description;
-        $newTrans->nominal = $nominal;
+        $newTrans->price = $nominal;
 
         $newTrans->save();
-        return redirect('/');
+        return redirect('/transactions');
     }
 
     public function editTransView(Request $request){

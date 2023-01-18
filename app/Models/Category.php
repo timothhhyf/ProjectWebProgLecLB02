@@ -13,7 +13,7 @@ class Category extends Model
     protected $fillable = [
         'description'
     ];
-    
+
     /**
      * Get the Transaction that owns the Category
      *
@@ -21,6 +21,6 @@ class Category extends Model
      */
     public function Transaction()
     {
-        return $this->belongsTo(Transaction::class);
+        return $this->hasMany(Transaction::class);
     }
 }
