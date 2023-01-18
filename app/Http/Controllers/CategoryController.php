@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -13,20 +14,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all()->paginate(10);
-        return view('category', [
+        $categories = Category::paginate(10);
+        return view('addcategory', [
             "categories" => $categories
         ])->with('i', (request()->input('page', 1) - 1) * 10);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('addcategory');
     }
 
     /**
@@ -43,6 +34,7 @@ class CategoryController extends Controller
 
         Category::create($request->all());
 
+        $categories = Category::all();
         return redirect('/category')->with('success', 'Category created!');
     }
 

@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <a href="/" class="navbar-brand">
                 <svg width="75" height="75" viewBox="0 0 106 106" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <rect y="0.789062" width="106" height="104.935" fill="url(#pattern0)"/>
+                    <rect y="0.789062" width="106" height="104.935" fill="{{url('/')}}"/>
                     <defs>
                     <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                     <use xlink:href="#image0_6_15" transform="translate(0 -0.0050733) scale(0.000925926 0.000935321)"/>
@@ -35,25 +35,30 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/transactions">Transactions</a>
-                    </li>
-                    <li class="nav-item" style="margin-right:5px;">
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
+                    @if (Auth::check())
+                        <li class="nav-item">
+                            <a class="nav-link" href="/transactions">Transactions</a>
+                        </li>
+                        <li class="nav-item" style="margin-right:5px;">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                    @endif
 
-                    {{-- Login & Register Button --}}
-                    <li class="nav-item" style="margin-right:10px;">
-                        <a href="/login" type="button" class="btn btn-dark login-btn">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/register" type="button" class="btn btn-secondary register-btn">Register</a>
-                    </li>
 
-                    {{-- Logout Button --}}
-                    <li>
-                        <a type="button" class="btn btn-primary">Logout</a>
-                    </li>
+                    @if (Auth::check())
+                        {{-- Logout Button --}}
+                        <li>
+                            <a href="/logout" type="button" class="btn btn-primary">Logout</a>
+                        </li>
+                    @else
+                        {{-- Login & Register Button --}}
+                        <li class="nav-item" style="margin-right:10px;">
+                            <a href="/login" type="button" class="btn btn-dark login-btn">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/register" type="button" class="btn btn-secondary register-btn">Register</a>
+                        </li>
+                    @endif
                 </ul>
                 <div class="login-register-btn">
                 </div>

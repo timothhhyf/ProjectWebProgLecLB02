@@ -12,7 +12,7 @@
                 <div class="btn-group" role="group">
                   <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                   <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <a class="dropdown-item" href="/addcategory">Add Category</a>
+                    <a class="dropdown-item" href="/category">Add Category</a>
                     <a class="dropdown-item" href="#">Add Transaction</a>
                   </div>
                 </div>
@@ -25,40 +25,11 @@
                         <i class="fas fa-angle-double-left"></i>
                     </button>
                     <div class="scroll-categories">
-                        {{-- @foreach ($genres as $g)
-                            <a href="/filterGenre/{{ $g->id }}">
-                                <p>{{ $g->name }}</p>
+                        @foreach ($categories as $c)
+                            <a href="/transaction/{{ $c->id }}">
+                                <p>{{ $c->description }}</p>
                             </a>
-                        @endforeach --}}
-                        <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>                    <a href="">
-                            <p>test</p>
-                        </a>
+                        @endforeach
                     </div>
                     <button class="right" onclick="rightScrollGenres()">
                         <i class="fas fa-angle-double-right"></i>
@@ -94,20 +65,28 @@
             </thead>
             <tbody>
                 {{-- foreach --}}
-                <tr class="table-info">
-                    <th scope="row">Info</th>
-                    <td>Column content</td>
-                    <td>Column content</td>
-                    <td style="position: relative;">Column content
-                    {{-- ini jgn didelete, masukin ke loop --}}
-                        <a class="edit-btn" href="">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </a>
-                        <a class="remove-btn" href="">
-                            <i class="fa-solid fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
+                @if ($transactions->isEmpty())
+                    <tr class="table-info">
+                        No Transaction Data Available
+                    </tr>
+                @else
+                    @foreach ($transactions as $t)
+                        <tr class="table-info">
+                            <th scope="row">{{ $t->category->description }}</th>
+                            <td>{{ "Rp. ".number_format($t->price) }}</td>
+                            <td>{{ $t->date }}</td>
+                            <td style="position: relative;">{{ $t->description }}
+                            {{-- ini jgn didelete, masukin ke loop --}}
+                                <a class="edit-btn" href="/transaction/{{$t->id}}/edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <a class="remove-btn" href="/transaction/{{$t->id}}/delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                @endif
             </tbody>
         </table>
     </div>

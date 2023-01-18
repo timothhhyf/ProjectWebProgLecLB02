@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaction;
+use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -38,6 +40,11 @@ class TransactionController extends Controller
         return redirect('/');
     }
 
+    public function editTransView(Request $request){
+        $trans = Transaction::find($request->id);
+        return view();
+    }
+
     public function editTransaction(Request $request){
         $trans = Transaction::find($request->id);
 
@@ -69,24 +76,25 @@ class TransactionController extends Controller
     public function deleteTransaction(Request $request){
         $trans = Transaction::find($request->id);
         $trans->delete();
-        return redirect('/');
+        return redirect('/transactions');
     }
 
     public function index(){
         $transactions = Transaction::with('user')->get();
-        $users = User::with('transactions')->get();
+        // $users = User::with('transactions')->get();
         $categories = Category::all();
 
-        return view('transaction', [
+        return view('viewtransaction', [
             "transactions" => $transactions,
-            "users" => $users,
+            // "users" => $users,
             "categories" => $categories
         ]);
     }
 
     public function show(Request $request)
     {
-        $transactions = Transaction::where('category_id', 'LIKE', "$request->id")->orderBy('date','desc');
-        return view('transpercat', ['transactions', $transactions]);
+        $category = Category::find($request->category);
+        $transactions = Transaction::where('category_id', 'LIKE', "$request->category")->orderBy('date','desc')->get();
+        return view('transpercat', ['transactions' => $transactions, 'category' => $category]);
     }
 }
