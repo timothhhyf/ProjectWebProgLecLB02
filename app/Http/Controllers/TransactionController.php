@@ -77,7 +77,7 @@ class TransactionController extends Controller
         $trans->price = $nominal;
 
         $trans->save();
-        return redirect('/');
+        return redirect('/transactions');
     }
 
     public function deleteTransaction(Request $request){
