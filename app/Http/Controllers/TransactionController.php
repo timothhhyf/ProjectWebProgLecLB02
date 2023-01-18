@@ -87,13 +87,11 @@ class TransactionController extends Controller
     }
 
     public function index(){
-        $transactions = Transaction::with('user')->get();
-        // $users = User::with('transactions')->get();
+        $transactions = Transaction::where('user_id', 'LIKE', Auth::user()->id)->get();
         $categories = Category::all();
 
         return view('viewtransaction', [
             "transactions" => $transactions,
-            // "users" => $users,
             "categories" => $categories
         ]);
     }
