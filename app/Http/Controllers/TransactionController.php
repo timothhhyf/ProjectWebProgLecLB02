@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Transaction;
 use App\Models\User;
 use App\Models\Category;
@@ -89,10 +90,17 @@ class TransactionController extends Controller
     public function index(){
         $transactions = Transaction::where('user_id', 'LIKE', Auth::user()->id)->get();
         $categories = Category::all();
+        $expense = 0;
+        foreach($transactions as $t){
+            if(Carbon::parse($t->date)->month == Carbon::now()->month){
+                $expense += $t->price;
+            }
+        }
 
         return view('viewtransaction', [
             "transactions" => $transactions,
-            "categories" => $categories
+            "categories" => $categories,
+            'expense' => $expense
         ]);
     }
 

@@ -5,6 +5,9 @@
 @section('content')
 
     <div class="transaction-content">
+        Your expense this month: {{ "Rp. " . number_format($expense) }}
+        <br>
+        Your max expense: {{ "Rp. " . number_format(Auth::user()->maxExpense) }}
         <div class="categories-add-btn">
             <h5>Categories</h5>
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
