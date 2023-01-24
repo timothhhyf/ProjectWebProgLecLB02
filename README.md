@@ -1,7 +1,6 @@
 <<<<<<< HEAD
-<p>This project is based on laravel framework.</p><br>
-<p>Dont forget to:</p><br>
-<p>
+<p>This project is based on laravel framework.<br>
+Dont forget to:<br>
 1. composer install<br>
 2. php artisan key:generate<br>
 3. put your own database name and migrate fresh --seed<br>
