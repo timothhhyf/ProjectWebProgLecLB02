@@ -415,3 +415,15 @@ input:focus::placeholder{
     margin-bottom: 20px;
 }
 
+.exp-stat-bar{
+    margin: 15px 40px 10px 40px;
+}
+
+.form-check input:hover{
+    cursor: pointer;
+}
+
+.form-check label:hover{
+    cursor: pointer;
+}
+

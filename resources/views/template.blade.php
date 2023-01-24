@@ -47,7 +47,7 @@
 
                     @if (Auth::check())
                         {{-- Logout Button --}}
-                        <li>
+                        <li style="margin-left: 10px;">
                             <a href="/logout" type="button" class="btn btn-primary">Logout</a>
                         </li>
                     @else

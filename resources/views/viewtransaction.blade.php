@@ -4,10 +4,65 @@
 
 @section('content')
 
+    @if ($expense >= (Auth::user()->maxExpense - 2000000) && $expense < (Auth::user()->maxExpense))
+        <div class="alert alert-dismissible alert-warning">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>You are about to reach your max expense this month!</strong> Don't forget to save some!
+        </div>
+
+        <div class="exp-stat-bar">
+            {{-- expense + max expense --}}
+            Your <strong>expense</strong> this month: {{ "Rp. " . number_format($expense) }}
+            <br>
+            Your <strong>max expense</strong> this month: {{ "Rp. " . number_format(Auth::user()->maxExpense) }}
+
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="{{ $expense }}" aria-valuemin="0" aria-valuemax="{{ Auth::user()->maxExpense }}" style="width: calc({{ $expense }}/{{ Auth::user()->maxExpense }}*100%); ">
+                </div>
+            </div>
+        </div>
+
+
+
+    @elseif ($expense >= (Auth::user()->maxExpense))
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>You are at your max expense or more this month!</strong> Go save some now!
+        </div>
+
+        <div class="exp-stat-bar">
+            {{-- expense + max expense --}}
+            Your <strong>expense</strong> this month: {{ "Rp. " . number_format($expense) }}
+            <br>
+            Your <strong>max expense</strong> this month: {{ "Rp. " . number_format(Auth::user()->maxExpense) }}
+
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="{{ $expense }}" aria-valuemin="0" aria-valuemax="{{ Auth::user()->maxExpense }}" style="width: calc({{ $expense }}/{{ Auth::user()->maxExpense }}*100%);">
+                </div>
+            </div>
+        </div>
+
+    @else
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            You are still far from your max expense this month, but don't forget to save :)
+        </div>
+
+        <div class="exp-stat-bar">
+            {{-- expense + max expense --}}
+            Your <strong>expense</strong> this month: {{ "Rp. " . number_format($expense) }}
+            <br>
+            Your <strong>max expense</strong> this month: {{ "Rp. " . number_format(Auth::user()->maxExpense) }}
+
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{ $expense }}" aria-valuemin="0" aria-valuemax="{{ Auth::user()->maxExpense }}" style="width: calc({{ $expense }}/{{ Auth::user()->maxExpense }}*100%)">
+                </div>
+            </div>
+        </div>
+    @endif
+
     <div class="transaction-content">
-        Your expense this month: {{ "Rp. " . number_format($expense) }}
-        <br>
-        Your max expense: {{ "Rp. " . number_format(Auth::user()->maxExpense) }}
+
         <div class="categories-add-btn">
             <h5>Categories</h5>
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">

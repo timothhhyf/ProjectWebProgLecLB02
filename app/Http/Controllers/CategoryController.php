@@ -35,7 +35,7 @@ class CategoryController extends Controller
         Category::create($request->all());
 
         $categories = Category::all();
-        return redirect('/category')->with('success', 'Category created!');
+        return redirect('/transactions');
     }
 
 

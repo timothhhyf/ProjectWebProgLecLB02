@@ -1,6 +1,6 @@
 @extends('template')
 
-@section('title', "{$category->description}")
+@section('title', 'Search')
 
 @section('content')
 
@@ -13,23 +13,6 @@
         }
     </script>
 
-    <h1 class="selected-category-name">{{ $category->description }}</h1>
-    <div class="transactions-sorter">
-        <div class="transactions-sort-by">
-            <h5 style="font-size:medium;">Sort By:</h5>
-            <a href="">Latest</a>
-            <a href="">Oldest</a>
-        </div>
-        <div class="transactions-search-and-add">
-            <form class="d-flex">
-                {{ csrf_field() }}
-                <input class="form-control me-sm-2 transactions-search-bar" type="search" placeholder="Search transaction">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
-    </div>
-
     <div class="trans-table">
         <table class="table table-hover">
             <thead>
@@ -41,10 +24,11 @@
                 </tr>
             </thead>
             <tbody>
+                {{-- foreach --}}
                 @if ($transactions->isEmpty())
-                <tr class="table-info">
-                    No Transaction Data Available
-                </tr>
+                    <tr class="table-info">
+                        No Transaction Data Available
+                    </tr>
                 @else
                     @foreach ($transactions as $t)
                         <tr class="table-info">

@@ -3,6 +3,11 @@
 @section('title', 'Register')
 
 @section('content')
+    @if ($errors->any())
+        <div class="alert alert-dismissible alert-danger">
+            {{$errors->first()}}
+        </div>
+    @endif
 
     <div style="display:flex; flex-direction:column; align-items:center; margin-top:auto;">
         <div class="header-text">
@@ -53,9 +58,5 @@
             </div>
         </div>
     </div>
-
-    @if ($errors->any())
-        {{$errors->first()}}
-    @endif
 
 @endsection

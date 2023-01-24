@@ -4,6 +4,15 @@
 
 @section('content')
 
+    <div style="margin: 10px 20px 10px 40px; display:flex; justify-content:flex-start;">
+        <button type="button" class="btn btn-outline-light" onclick="goBack()">&#8249;&nbsp;Back</button>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
     <div class="create-update0">
         <h1>New Transaction</h1>
         <form action="/transaction/add/addTrans" method="POST">
@@ -37,6 +46,5 @@
             <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Add Transaction</button>
         </form>
     </div>
-
 
 @endsection

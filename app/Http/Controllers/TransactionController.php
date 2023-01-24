@@ -113,18 +113,51 @@ class TransactionController extends Controller
     public function sortLatest(){
         $transactions = Transaction::orderBy('date', 'desc')->get();
         $categories = Category::all();
-        return view('viewtransaction', ['transactions' => $transactions, 'categories' => $categories]);
+        $expense = 0;
+        foreach($transactions as $t){
+            if(Carbon::parse($t->date)->month == Carbon::now()->month){
+                $expense += $t->price;
+            }
+        }
+
+        return view('viewtransaction', [
+            "transactions" => $transactions,
+            "categories" => $categories,
+            'expense' => $expense
+        ]);
     }
 
     public function sortOldest(){
         $transactions = Transaction::orderBy('date', 'asc')->get();
         $categories = Category::all();
-        return view('viewtransaction', ['transactions' => $transactions, 'categories' => $categories]);
+        $expense = 0;
+        foreach($transactions as $t){
+            if(Carbon::parse($t->date)->month == Carbon::now()->month){
+                $expense += $t->price;
+            }
+        }
+
+        return view('viewtransaction', [
+            "transactions" => $transactions,
+            "categories" => $categories,
+            'expense' => $expense
+        ]);
     }
 
     public function searchTransaction(Request $request){
         $transactions = Transaction::where('description', 'LIKE', "$request->description%")->get();
         $categories = Category::all();
-        return view('viewtransaction', ['transactions' => $transactions, 'categories' => $categories]);
+        $expense = 0;
+        foreach($transactions as $t){
+            if(Carbon::parse($t->date)->month == Carbon::now()->month){
+                $expense += $t->price;
+            }
+        }
+
+        return view('searchedtrans', [
+            "transactions" => $transactions,
+            "categories" => $categories,
+            'expense' => $expense
+        ]);
     }
 }

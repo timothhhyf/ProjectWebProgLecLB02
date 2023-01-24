@@ -3,6 +3,11 @@
 @section('title', 'Login')
 
 @section('content')
+    @if ($errors->any())
+        <div class="alert alert-dismissible alert-danger">
+            {{$errors->first()}}
+        </div>
+    @endif
 
     <div style="display:flex; flex-direction:column; align-items:center; margin-top:auto;">
         <div class="header-text">
@@ -35,12 +40,6 @@
                             <input type="password" name="password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp" placeholder="Enter your password">
                         </div>
                     </div>
-                    @if ($errors->any())
-                        {{-- Error msg --}}
-                        <div>
-                            {{ $errors->first() }}
-                        </div>
-                    @endif
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="remember">
                         <label class="form-check-label" for="flexCheckDefault"> Remember me </label>
