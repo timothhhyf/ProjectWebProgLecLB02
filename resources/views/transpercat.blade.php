@@ -17,13 +17,13 @@
     <div class="transactions-sorter">
         <div class="transactions-sort-by">
             <h5 style="font-size:medium;">Sort By:</h5>
-            <a href="">Latest</a>
-            <a href="">Oldest</a>
+            <a href="/transactions/{{ $category->id }}/latest">Latest</a>
+            <a href="/transactions/{{ $category->id }}/oldest">Oldest</a>
         </div>
         <div class="transactions-search-and-add">
-            <form class="d-flex">
+            <form class="d-flex" method="POST" action="/transaction/{{ $category->id }}/search">
                 {{ csrf_field() }}
-                <input class="form-control me-sm-2 transactions-search-bar" type="search" placeholder="Search transaction">
+                <input name="description" class="form-control me-sm-2 transactions-search-bar" type="search" placeholder="Search transaction">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>

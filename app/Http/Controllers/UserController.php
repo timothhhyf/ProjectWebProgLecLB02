@@ -78,26 +78,26 @@ class UserController extends Controller
     }
 
     public function editUser(Request $request){
-        $user = Auth::user();
-        $name = $request->name;
-        $password = bcrypt($request->password);
-        $email = $request->email;
-
+        $user = User::find(Auth::user()->id);
+        // validation
         $validation = [
-            // Rules
-            'username' => 'required | min:5 | unique:users,name',
-            'email' => 'required | email | unique:users,email',
-            'password' => 'required | alpha_num | confirmed'
+            'username' => 'required',
+            'email' => 'required | email',
+            'dob' => 'required',
+            'phone' => 'required | min:5 | max:13',
         ];
-        $validator = Validator::make($request->all(), $validation);
 
+        $validator = Validator::make($request->all(), $validation);
         if($validator->fails()){
             return back()->withErrors($validator);
         }
 
-        $user->name = $name;
-        $user->password = $password;
-        $user->email = $email;
+        // insert data to user
+        $user->name = $request->username;
+        $user->email = $request->email;
+        $user->dob = $request->dob;
+        $user->phone = $request->phone;
+        $user->maxExpense = $request->max_expenses;
 
         $user->save();
         return redirect('/');

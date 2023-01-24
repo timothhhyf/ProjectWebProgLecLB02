@@ -160,4 +160,59 @@ class TransactionController extends Controller
             'expense' => $expense
         ]);
     }
+
+    public function sortLatestFromCategory(Request $request){
+        $transactions = Transaction::where('category_id', 'LIKE', "$request->id")->orderBy('date', 'desc')->get();
+        $category = Category::find($request->id);
+        $expense = 0;
+        foreach($transactions as $t){
+            if(Carbon::parse($t->date)->month == Carbon::now()->month){
+                $expense += $t->price;
+            }
+        }
+
+        return view('transpercat', [
+            "transactions" => $transactions,
+            "category" => $category,
+            'expense' => $expense
+        ]);
+    }
+
+    public function sortOldestFromCategory(Request $request){
+        $transactions = Transaction::where('category_id', 'LIKE', "$request->id")->orderBy('date', 'asc')->get();
+        $category = Category::find($request->id);
+        $expense = 0;
+        foreach($transactions as $t){
+            if(Carbon::parse($t->date)->month == Carbon::now()->month){
+                $expense += $t->price;
+            }
+        }
+
+        return view('transpercat', [
+            "transactions" => $transactions,
+            "category" => $category,
+            'expense' => $expense
+        ]);
+    }
+
+    public function searchTransPerCat(Request $request){
+        if($request->description == null){
+            $transactions = Transaction::where('category_id', 'LIKE', "$request->id")->get();
+        }else{
+            $transactions = Transaction::where('description', 'LIKE', "%$request->description%", 'AND', 'category_id', 'LIKE', "$request->id")->get();
+        }
+        $category = Category::find($request->id);
+        $expense = 0;
+        foreach($transactions as $t){
+            if(Carbon::parse($t->date)->month == Carbon::now()->month){
+                $expense += $t->price;
+            }
+        }
+
+        return view('transpercat', [
+            "transactions" => $transactions,
+            "category" => $category,
+            'expense' => $expense
+        ]);
+    }
 }

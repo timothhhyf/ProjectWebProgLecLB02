@@ -51,7 +51,7 @@
                     </div>
                     <div class="input-group mb-3">
                         <label for="max-expenses" class="form-label">Max Expenses : Rp. <span id="formatted-value"></span></label>
-                        <input type="range" class="form-range" name="max-expenses" id="max-expenses" min="5000000" max="30000000" step="500000" value="5000000">
+                        <input name="max_expenses" type="range" class="form-range" name="max-expenses" id="max-expenses" min="5000000" max="30000000" step="500000" value="5000000">
                     </div>
                     <button class="btn btn-primary save-changes">Save Changes</button>
                 </div>

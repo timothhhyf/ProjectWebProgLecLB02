@@ -37,13 +37,17 @@ Route::get('/editcategory', [CategoryController::class, 'edit'])->middleware('lo
 Route::get('/transactions', [TransactionController::class, 'index'])->middleware('loginCheck');
 Route::get('/transactions/latest', [TransactionController::class, 'sortLatest'])->middleware('loginCheck');
 Route::get('/transactions/oldest', [TransactionController::class, 'sortOldest'])->middleware('loginCheck');
+Route::get('/transactions/{id}/latest', [TransactionController::class, 'sortLatestFromCategory'])->middleware('loginCheck');
+Route::get('/transactions/{id}/oldest', [TransactionController::class, 'sortOldestFromCategory'])->middleware('loginCheck');
 Route::get('/transaction/add', [TransactionController::class, 'createTransView'])->middleware('loginCheck');
 Route::get('/transaction/{id}/edit', [TransactionController::class, 'editTransView'])->middleware('loginCheck');
 Route::get('/transaction/{id}/delete', [TransactionController::class, 'deleteTransaction'])->middleware('loginCheck');
 Route::get('/transaction/{category}', [TransactionController::class, 'show'])->middleware('loginCheck');
+Route::get('/profile', function(){ return view('updateprofile'); })->middleware('loginCheck');
 // Category
 Route::post('/login/authLogin', [UserController::class, 'login'])->middleware('afterLoginCheck');
 Route::post('/register/addUser', [UserController::class, 'createUser'])->middleware('afterLoginCheck');
+Route::post('/profile/saveChanges', [UserController::class, 'editUser'])->middleware('loginCheck');
 Route::post('/transaction/add/addTrans', [TransactionController::class, 'createTransaction'])->middleware('loginCheck');
 Route::post('/transcation/{id}/edit/editTrans', [TransactionController::class, 'editTransaction'])->middleware('loginCheck');
 Route::post('/transaction/search', [TransactionController::class, 'searchTransaction'])->middleware('loginCheck');
