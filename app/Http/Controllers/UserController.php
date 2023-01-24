@@ -100,6 +100,6 @@ class UserController extends Controller
         $user->maxExpense = $request->max_expenses;
 
         $user->save();
-        return redirect('/');
+        return redirect('/transactions');
     }
 }
