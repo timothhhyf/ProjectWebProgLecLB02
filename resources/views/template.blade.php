@@ -40,7 +40,7 @@
                             <a class="nav-link" href="/transactions">Transactions</a>
                         </li>
                         <li class="nav-item" style="margin-right:5px;">
-                            <a class="nav-link" href="#">Profile</a>
+                            <a class="nav-link" href="/profile">Profile</a>
                         </li>
                     @endif
 

@@ -20,9 +20,8 @@
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="{{ $expense }}" aria-valuemin="0" aria-valuemax="{{ Auth::user()->maxExpense }}" style="width: calc({{ $expense }}/{{ Auth::user()->maxExpense }}*100%); ">
                 </div>
             </div>
+            <span class="badge bg-dark" style="position: absolute; top:0; right:0;"><small>You can always change your max expenses in profile setting</small></span>
         </div>
-
-
 
     @elseif ($expense >= (Auth::user()->maxExpense))
         <div class="alert alert-dismissible alert-danger">
@@ -40,6 +39,7 @@
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="{{ $expense }}" aria-valuemin="0" aria-valuemax="{{ Auth::user()->maxExpense }}" style="width: calc({{ $expense }}/{{ Auth::user()->maxExpense }}*100%);">
                 </div>
             </div>
+            <span class="badge bg-dark" style="position: absolute; top:0; right:0;"><small>You can always change your max expenses in profile setting</small></span>
         </div>
 
     @else
@@ -58,6 +58,8 @@
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{ $expense }}" aria-valuemin="0" aria-valuemax="{{ Auth::user()->maxExpense }}" style="width: calc({{ $expense }}/{{ Auth::user()->maxExpense }}*100%)">
                 </div>
             </div>
+            <span class="badge bg-dark" style="position: absolute; top:0; right:0;"><small>You can always change your max expenses in profile setting</small></span>
+
         </div>
     @endif
 

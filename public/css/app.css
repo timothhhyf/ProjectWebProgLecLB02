@@ -272,6 +272,8 @@ input:focus::placeholder{
     border-radius: 20px;
     background-color: #3b8fcb;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .scroll-categories p{
@@ -417,6 +419,7 @@ input:focus::placeholder{
 
 .exp-stat-bar{
     margin: 15px 40px 10px 40px;
+    position: relative;
 }
 
 .form-check input:hover{
@@ -425,5 +428,77 @@ input:focus::placeholder{
 
 .form-check label:hover{
     cursor: pointer;
+}
+
+/* profile section */
+.profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto 80px 0 120px;
+}
+
+.my-profile{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.profile-display{
+    display: flex;
+    flex-direction: column;
+}
+
+#my{
+    color: #0b4a77;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+#profile{
+    color: #0b4a77;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.update-profile{
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+}
+
+#update-profile{
+    color: #0b4a77;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.btn.change-image{
+    background-color: rgba(104, 104, 104, 0.375);
+}
+
+.btn.change-image:hover{
+    background-color: rgba(104, 104, 104, 0.759);
+}
+
+.btn.btn-primary.save-changes{
+    width: 550px;
+}
+
+.user-name{
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: medium;
+}
+
+.user-email{
+    font-weight: bold;
+    text-align: center;
+    font-size: medium;
+    color: #747372;
 }
 

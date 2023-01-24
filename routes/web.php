@@ -28,6 +28,7 @@ Route::view('/register', 'register')->middleware('afterLoginCheck');
 // Route::view('/Category', 'transpercat');
 // Route::view('/addtransaction', 'addtransaction');
 // Route::view('/updatetransaction', 'updatetrans');
+Route::view('/profile', 'updateprofile');
 
 Route::get('/login', function(){ return view('login'); })->middleware('afterLoginCheck');
 Route::get('/logout', [UserController::class, 'logout'])->middleware('loginCheck');
